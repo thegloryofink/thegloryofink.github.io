@@ -1,0 +1,188 @@
+body {
+  background: #f6ecd7;
+  /* beige from logo */
+  color: #2d2320;
+  /* dark ink black */
+  font-family: "Georgia", serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header */
+header {
+  text-align: center;
+  padding: 1em 0 0.5em 0;
+  background: #f6ecd7;
+}
+
+.header-flex .logo-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+  flex-wrap: wrap;
+}
+
+.logo {
+  width: 70px;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px #bfa77a;
+  margin-right: 1em;
+  flex-shrink: 0;
+}
+
+.logo-title h1 {
+  margin: 0;
+  font-size: 2.2em;
+  word-break: break-word;
+}
+
+.logo-title .subtitle {
+  margin: 0;
+  font-size: 1.2em;
+  color: #bfa77a;
+  /* feather brown */
+}
+
+/* Navigation */
+nav {
+  background: #2d2320;
+  padding: 0.5em;
+  text-align: center;
+}
+
+nav a {
+  color: #f6ecd7;
+  margin: 0 1em;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+nav a:hover {
+  color: #bfa77a;
+}
+
+/* Main wrapper */
+main {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1em;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+main h2 {
+  margin-bottom: 1em;
+}
+
+/* Poem preview grid */
+#poem-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5em;
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.poem-preview {
+  background: #fffbe9;
+  padding: 1.2em;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px #bfa77a33;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.poem-preview:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px #bfa77a55;
+}
+
+.poem-preview h3 {
+  margin-top: 0;
+  font-size: 1.2em;
+}
+
+.poem-preview a {
+  color: #2d2320;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.poem-preview a:hover {
+  color: #bfa77a;
+}
+
+/* Single poem page */
+.poem-full {
+  flex: 1;
+  max-width: 700px;
+  margin: 30px auto;
+  background: #fffbe9;
+  padding: 2em;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px #bfa77a33;
+  text-align: center;
+}
+
+.poem-full h2 {
+  margin-top: 0;
+}
+
+.poem-full pre {
+  white-space: pre-wrap;
+  font-family: "Georgia", serif;
+  font-size: 1.15em;
+  background: none;
+  border: none;
+  margin: 1em 0;
+  text-align: left;
+  /* better readability */
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1em 0;
+  background: #2d2320;
+  color: #f6ecd7;
+  font-size: 0.9em;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  #poem-list {
+    grid-template-columns: 1fr;
+    gap: 1em;
+  }
+
+  .header-flex .logo-title {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5em;
+  }
+
+  .logo {
+    width: 50px;
+    margin-right: 0;
+  }
+
+  .logo-title h1 {
+    font-size: 1.5em;
+  }
+
+  nav a {
+    margin: 0 0.5em;
+    font-size: 1em;
+  }
+
+  .poem-full {
+    padding: 1em;
+    max-width: 100%;
+  }
+}
