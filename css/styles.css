@@ -80,11 +80,18 @@ main h2 {
 /* Poem preview grid */
 #poem-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 1.5em;
   width: 100%;
   margin: 0 auto;
   box-sizing: border-box;
+}
+
+/* make the whole card clickable */
+.poem-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
 }
 
 .poem-preview {
@@ -94,6 +101,9 @@ main h2 {
   box-shadow: 0 2px 8px #bfa77a33;
   text-align: center;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+  min-height: -webkit-fill-available;
+  /* fill available height */
 }
 
 .poem-preview:hover {
@@ -104,16 +114,13 @@ main h2 {
 .poem-preview h3 {
   margin-top: 0;
   font-size: 1.2em;
-}
-
-.poem-preview a {
   color: #2d2320;
-  text-decoration: none;
-  font-weight: bold;
 }
 
-.poem-preview a:hover {
-  color: #bfa77a;
+.poem-preview p {
+  color: #444;
+  font-size: 0.95em;
+  line-height: 1.4;
 }
 
 /* Single poem page */
@@ -154,13 +161,63 @@ footer {
   box-sizing: border-box;
 }
 
+/* Contact page */
+.contact {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background: #fffbe9;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.contact h2 {
+  margin-bottom: 1rem;
+  color: #2d2320;
+}
+
+.contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+  font-size: 1.1rem;
+}
+
+.contact-list li {
+  margin: 0.8rem 0;
+}
+
+.contact-list i {
+  margin-right: 8px;
+  color: #bfa77a;
+}
+
+.contact-list a {
+  color: #2d2320;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.contact-list a:hover {
+  color: #bfa77a;
+  text-decoration: underline;
+}
+
 /* Responsive tweaks */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   #poem-list {
     grid-template-columns: 1fr;
-    gap: 1em;
   }
+}
 
+@media (min-width: 769px) and (max-width: 1200px) {
+  #poem-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
   .header-flex .logo-title {
     flex-direction: column;
     align-items: center;
@@ -185,4 +242,27 @@ footer {
     padding: 1em;
     max-width: 100%;
   }
+}
+
+.logo-title h1 a {
+  /* Remove default link styles */
+  text-decoration: none;
+  color: inherit;
+  /* Inherit the color from the parent <h1> */
+}
+
+.logo-text {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.5rem;
+  color: #2d2320;
+  /* ink-like dark color */
+}
+
+.poem-title {
+  font-family: 'Great Vibes', cursive;
+  font-size: 1.8rem;
+  color: #2d2320;
+  /* ink-like dark color */
+  margin-bottom: 0.5em;
+  letter-spacing: 1.5px;
 }
