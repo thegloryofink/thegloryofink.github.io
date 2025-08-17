@@ -110,6 +110,20 @@ main h2 {
   display: block;
 }
 
+/* .poem-preview {
+  background: #fffbe9;
+  padding: 1.2em;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px #bfa77a33;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+  Use flexbox for consistent internal layout
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+} */
+
 .poem-preview {
   background: #fffbe9;
   padding: 1.2em;
@@ -118,10 +132,8 @@ main h2 {
   text-align: center;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   cursor: pointer;
-  /* Use flexbox for consistent internal layout */
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  min-height: -webkit-fill-available;
+  /* fill available height */
 }
 
 .poem-preview:hover {
