@@ -1,11 +1,23 @@
+/*
+   Theme: The Glory of Ink
+   Color Palette:
+   - #f6ecd7 (Beige from logo)
+   - #2d2320 (Dark ink black)
+   - #bfa77a (Feather brown)
+   - #fffbe9 (Lightest beige for cards)
+*/
+
+/* Base Styles */
 body {
   background: #f6ecd7;
-  /* beige from logo */
   color: #2d2320;
-  /* dark ink black */
   font-family: "Georgia", serif;
   margin: 0;
   padding: 0;
+  /* Flexbox for sticky footer */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 /* Header */
@@ -41,7 +53,6 @@ header {
   margin: 0;
   font-size: 1.2em;
   color: #bfa77a;
-  /* feather brown */
 }
 
 /* Navigation */
@@ -57,13 +68,14 @@ nav a {
   text-decoration: none;
   font-weight: bold;
   font-size: 1.1em;
+  transition: color 0.2s ease;
 }
 
 nav a:hover {
   color: #bfa77a;
 }
 
-/* Main wrapper */
+/* Main content wrapper */
 main {
   width: 100%;
   max-width: 1200px;
@@ -71,6 +83,8 @@ main {
   padding: 1em;
   box-sizing: border-box;
   text-align: center;
+  /* Allows main content to grow and push the footer down */
+  flex: 1; 
 }
 
 main h2 {
@@ -85,9 +99,11 @@ main h2 {
   width: 100%;
   margin: 0 auto;
   box-sizing: border-box;
+  /* Ensures cards in the same row have uniform height */
+  align-items: stretch;
 }
 
-/* make the whole card clickable */
+/* Poem preview card */
 .poem-link {
   text-decoration: none;
   color: inherit;
@@ -102,8 +118,10 @@ main h2 {
   text-align: center;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   cursor: pointer;
-  min-height: -webkit-fill-available;
-  /* fill available height */
+  /* Use flexbox for consistent internal layout */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .poem-preview:hover {
@@ -123,7 +141,7 @@ main h2 {
   line-height: 1.4;
 }
 
-/* Single poem page */
+/* Single poem page (if applicable) */
 .poem-full {
   flex: 1;
   max-width: 700px;
@@ -147,7 +165,6 @@ main h2 {
   border: none;
   margin: 1em 0;
   text-align: left;
-  /* better readability */
 }
 
 /* Footer */
@@ -197,6 +214,7 @@ footer {
   color: #2d2320;
   text-decoration: none;
   font-weight: bold;
+  transition: color 0.2s ease, text-decoration 0.2s ease;
 }
 
 .contact-list a:hover {
@@ -204,7 +222,7 @@ footer {
   text-decoration: underline;
 }
 
-/* Responsive tweaks */
+/* Responsive design */
 @media (max-width: 768px) {
   #poem-list {
     grid-template-columns: 1fr;
@@ -223,46 +241,39 @@ footer {
     align-items: center;
     gap: 0.5em;
   }
-
   .logo {
     width: 50px;
     margin-right: 0;
   }
-
   .logo-title h1 {
     font-size: 1.5em;
   }
-
   nav a {
     margin: 0 0.5em;
     font-size: 1em;
   }
-
   .poem-full {
     padding: 1em;
     max-width: 100%;
   }
 }
 
+/* Typography styles */
 .logo-title h1 a {
-  /* Remove default link styles */
   text-decoration: none;
   color: inherit;
-  /* Inherit the color from the parent <h1> */
 }
 
 .logo-text {
   font-family: 'Great Vibes', cursive;
   font-size: 2.5rem;
   color: #2d2320;
-  /* ink-like dark color */
 }
 
 .poem-title {
   font-family: 'Great Vibes', cursive;
   font-size: 1.8rem;
   color: #2d2320;
-  /* ink-like dark color */
   margin-bottom: 0.5em;
   letter-spacing: 1.5px;
 }
