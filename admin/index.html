@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Poem Export - The Glory of Ink</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: #eee;
+      font-family: Arial, sans-serif;
+    }
+
+    .export-app {
+      max-width: 1200px;
+      margin: 20px auto;
+      text-align: center;
+    }
+
+    .controls {
+      margin-bottom: 20px;
+    }
+
+    select, button {
+      padding: 10px 15px;
+      margin: 5px;
+      font-size: 18px;
+    }
+
+    /* Export box fixed size */
+    #post {
+      width: 1080px;
+      height: 1920px;
+      background: #fff;
+      margin: 0 auto;
+      padding: 60px 80px 100px 80px; /* extra bottom padding */
+      box-sizing: border-box;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      overflow: hidden;
+      position: relative;
+
+      border: 1px solid #ccc;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    #logo {
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      margin-bottom: 40px;
+      object-fit: cover;
+    }
+
+    #poem-title {
+      font-family: 'Great Vibes', cursive;
+      font-size: 72px;
+      margin: 0 0 50px 0;
+      text-align: center;
+      word-wrap: break-word;
+      line-height: 1.2;
+    }
+
+    #poem-content {
+      flex: 1;
+      width: 100%;
+      font-size: 42px;
+      line-height: 1.5;
+      white-space: pre-wrap;
+      text-align: center;
+      overflow: hidden;
+      margin: 0;
+    }
+
+    /* Copyright */
+    #copyright {
+      font-size: 24px;
+      color: #666;
+      text-align: center;
+      position: absolute;
+      bottom: 30px;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div class="export-app">
+    <div class="controls">
+      <select id="poem-select">
+        <option value="">Select a Poem</option>
+      </select>
+      <button id="load-btn">Load Poem</button>
+      <button id="export-btn">Export as Image</button>
+    </div>
+
+    <div id="post">
+      <img id="logo" src="Logo.png" alt="Logo">
+      <h2 id="poem-title">Poem Title</h2>
+      <pre id="poem-content">Poem will appear here...</pre>
+      <p id="copyright">© 2025 The Glory of Ink</p>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
