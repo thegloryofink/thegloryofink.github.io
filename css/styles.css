@@ -110,20 +110,6 @@ main h2 {
   display: block;
 }
 
-/* .poem-preview {
-  background: #fffbe9;
-  padding: 1.2em;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px #bfa77a33;
-  text-align: center;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  cursor: pointer;
-  Use flexbox for consistent internal layout
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-} */
-
 .poem-preview {
   background: #fffbe9;
   padding: 1.2em;
@@ -288,4 +274,16 @@ footer {
   color: #2d2320;
   margin-bottom: 0.5em;
   letter-spacing: 1.5px;
+}
+
+.instagram-poem {
+  display: inline-block;
+  margin-top: 1em;
+  padding: 0.5em 1em;
+  background: #2d2320;
+  color: #f6ecd7;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background 0.2s ease, color 0.2s ease;
 }
