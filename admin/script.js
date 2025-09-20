@@ -1,4 +1,4 @@
-    const baseUrl = "https://thegloryofink.github.io";
+    const baseUrl = "/Blog";
 
     async function loadPoemList() {
       try {
